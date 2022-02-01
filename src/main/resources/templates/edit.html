@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:action="@{/jmz/update/{id}(id=${candidate.id})}" th:object="${image}" method="post">
+		<label>NAME</label>
+		<input type="file" name="image"/><br>
+		<button type="submit">
+			Submit
+		</button>
+	</form>
+</body>
+</html>

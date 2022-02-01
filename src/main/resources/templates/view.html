@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Images</h2>
+ <div>
+ <table border="1" Style="width: 100%">
+ <tr><td>ID</td><td>IMAGE</td><td>ACTION</td></tr>
+ <tr th:each="user:${image}">
+ <td th:text=${user.id}></td>
+   <td> <img alt="" th:src="*{'data:image/jpeg;base64,'+{user.image}}" width="100px"></td>
+      <td><a th:href="@{/jmz/{id}(id=${user.id})}">Delete</a></td>
+     <td><a th:href="@{/jmz/edit/{id}(id=${user.id})}">edit</a></td>
+ </tr>        
+ </table>
+  <a th:href="@{/}"><h2>click</h2></a>
+</div>
+</body>
+</html>
